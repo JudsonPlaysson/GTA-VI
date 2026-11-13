@@ -1,90 +1,311 @@
-* {
-    margin: 0;
-    box-sizing: border-box;
-    font-family: "Bangers", system-ui;
+/* Responsive styles for the GTA character selection screen */
+:root {
+  color-scheme: dark;
+  font-family: "Bangers", system-ui, sans-serif;
+  --accent: #ff3cac;
+  --highlight: #ffd319;
+  --surface: rgba(9, 12, 24, 0.48);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 html {
-    height: 100%;
+  min-width: 320px;
+  min-height: 100%;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
-    background-image: url('./assests/background2.jpg');
-    background-size: cover;
-    background-position: center;
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  min-height: 100vh;
+  min-height: 100svh;
+  margin: 0;
+  overflow-x: hidden;
+  color: #fff;
+  background: #111 url("./assests/background2.jpg") center / cover no-repeat fixed;
+}
+
+body::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  content: "";
+  background: linear-gradient(180deg, rgba(5, 7, 16, 0.18), rgba(5, 7, 16, 0.68));
+}
+
+img {
+  display: block;
+  max-width: 100%;
 }
 
 .nome {
-    color: #ff3cac;
-    font-size: 250px;
-    position: absolute;
-    bottom: 420px;
-    text-align: center;
-    width: 100%;
-    font-weight: bold;
+  position: absolute;
+  z-index: 1;
+  top: clamp(1rem, 7vh, 5rem);
+  left: 50%;
+  width: min(94%, 16ch);
+  margin: 0;
+  color: var(--accent);
+  font-size: clamp(4rem, 10vw, 15.625rem);
+  font-weight: 700;
+  line-height: 0.82;
+  text-align: center;
+  text-wrap: balance;
+  transform: translateX(-50%);
+  text-shadow: 0 0.08em 0.2em rgba(0, 0, 0, 0.35);
+}
+
+.div1 {
+  position: absolute;
+  inset: auto 0 calc(5.5rem + var(--safe-bottom));
+  display: grid;
+  place-items: end center;
+  pointer-events: none;
 }
 
 .image-1 {
-    position: absolute;
-    height: 550px;
-    margin: auto;
-    bottom: 0;
-    left: 0;
-    right: 0;
+  width: auto;
+  height: min(48svh, 34rem);
+  max-height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
 }
 
 .div2 {
-    position: absolute;
-    left: 40px;
-    bottom: 40px;
+  position: absolute;
+  z-index: 2;
+  bottom: calc(6.25rem + var(--safe-bottom));
+  left: clamp(1rem, 3vw, 3rem);
+  width: min(29rem, 42vw);
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  background: var(--surface);
+  backdrop-filter: blur(0.35rem);
+}
+
+.p1,
+.p2,
+h1 {
+  margin: 0;
 }
 
 .p1 {
-    font-size: 26px;
-    color: #ffd319;
+  color: var(--highlight);
+  font-size: clamp(1.1rem, 2vw, 1.625rem);
+  line-height: 1.2;
 }
 
-.p2,
 h1 {
-    color: #FFFFFFFF;
+  color: #fff;
+  font-size: clamp(2.4rem, 5.5vw, 5rem);
+  line-height: 0.95;
+}
+
+.p2 {
+  margin-top: 0.4rem;
+  color: #fff;
+  font-family: "Montserrat", system-ui, sans-serif;
+  font-size: clamp(0.8rem, 1.2vw, 1rem);
+  line-height: 1.4;
 }
 
 .menu {
-    position: absolute;
-    bottom: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    gap: 10px;
-    cursor: pointer;
+  position: absolute;
+  z-index: 3;
+  right: 0;
+  bottom: calc(0.75rem + var(--safe-bottom));
+  left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.65rem;
+  padding-inline: 1rem;
+}
+
+.avatar,
+.voce {
+  flex: 0 0 3.75rem;
+  width: 3.75rem;
+  height: 3.75rem;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.35);
 }
 
 .avatar {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    object-fit: cover;
-    object-position: top;
-    border: 2px solid #ffffff;
+  object-fit: cover;
+  object-position: top;
+  cursor: pointer;
+  transition: transform 160ms ease, border-color 160ms ease;
+}
+
+.avatar:hover,
+.avatar:focus-visible {
+  border-color: var(--highlight);
+  transform: translateY(-0.2rem) scale(1.06);
 }
 
 .voce {
-    /* troca a cor de fundo */
-    /* espaçamento interno */
-    padding: 9px;
-    border-radius: 50%;
-    text-align: center;
-    cursor: pointer;
-    width: 60px;
-    height: 60px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  overflow: hidden;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .gta {
-    width: 100px;
-    position: relative;
-    height: 88px;  
-    border-radius: 50%;
-    bottom: 28px;
-    border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  object-fit: cover;
+}
+
+.menu img,
+.voce {
+  touch-action: manipulation;
+}
+
+@media (max-width: 40rem) {
+  body {
+    background-attachment: scroll;
+  }
+
+  .nome {
+    top: 5svh;
+    font-size: clamp(4rem, 21vw, 7.5rem);
+  }
+
+  .div1 {
+    bottom: calc(8.5rem + var(--safe-bottom));
+  }
+
+  .image-1 {
+    height: min(43svh, 23rem);
+  }
+
+  .div2 {
+    right: 0.75rem;
+    bottom: calc(4.9rem + var(--safe-bottom));
+    left: 0.75rem;
+    width: auto;
+    max-width: 34rem;
+    margin-inline: auto;
+    padding: 0.5rem 0.75rem;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 10vw, 3.4rem);
+  }
+
+  .p1 {
+    font-size: clamp(1rem, 4.8vw, 1.4rem);
+  }
+
+  .p2 {
+    font-size: clamp(0.75rem, 3.2vw, 0.95rem);
+  }
+
+  .menu {
+    gap: 0.5rem;
+    padding-inline: 0.5rem;
+  }
+
+  .avatar,
+  .voce {
+    flex-basis: 3.25rem;
+    width: 3.25rem;
+    height: 3.25rem;
+  }
+}
+
+/* Short landscape phones: keep the character and controls clear of the text. */
+@media (max-width: 54rem) and (orientation: landscape) and (max-height: 32rem) {
+  .nome {
+    top: 0.75rem;
+    left: 68%;
+    width: 60%;
+    font-size: clamp(3rem, 14vh, 5rem);
+  }
+
+  .div1 {
+    right: 34%;
+    bottom: 0.5rem;
+  }
+
+  .image-1 {
+    height: 78svh;
+  }
+
+  .div2 {
+    right: 0.75rem;
+    bottom: 4.5rem;
+    left: auto;
+    width: 35%;
+    padding: 0.4rem 0.6rem;
+    text-align: left;
+  }
+
+  h1 {
+    font-size: clamp(1.8rem, 7vh, 3rem);
+  }
+
+  .menu {
+    right: 0.5rem;
+    bottom: 0.4rem;
+    left: auto;
+    justify-content: flex-end;
+  }
+
+  .avatar,
+  .voce {
+    flex-basis: 2.75rem;
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+}
+
+@media (min-width: 64rem) {
+  .div1 {
+    bottom: 0;
+  }
+
+  .image-1 {
+    height: min(76svh, 48rem);
+  }
+
+  .div2 {
+    bottom: 2rem;
+    width: min(30rem, 30vw);
+    padding: 1rem 1.25rem;
+  }
+
+  .menu {
+    bottom: 2rem;
+  }
+
+  .avatar,
+  .voce {
+    flex-basis: 4rem;
+    width: 4rem;
+    height: 4rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
 }
