@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Bangers", system-ui;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    background-image: url('./assests/background2.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.nome {
+    color: #ff3cac;
+    font-size: 250px;
+    position: absolute;
+    bottom: 420px;
+    text-align: center;
+    width: 100%;
+    font-weight: bold;
+}
+
+.image-1 {
+    position: absolute;
+    height: 550px;
+    margin: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.div2 {
+    position: absolute;
+    left: 40px;
+    bottom: 40px;
+}
+
+.p1 {
+    font-size: 26px;
+    color: #ffd319;
+}
+
+.p2,
+h1 {
+    color: #FFFFFFFF;
+}
+
+.menu {
+    position: absolute;
+    bottom: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top;
+    border: 2px solid #ffffff;
+}
+
+.voce {
+    /* troca a cor de fundo */
+    /* espaçamento interno */
+    padding: 9px;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+}
+
+.gta {
+    width: 100px;
+    position: relative;
+    height: 88px;  
+    border-radius: 50%;
+    bottom: 28px;
+    border-radius: 50%;
+}

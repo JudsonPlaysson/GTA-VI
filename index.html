@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bangers&family=Clarity+City:ital,wght@0,100..900;1,100..900&family=Courgette&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <title>GTA</title>
+</head>
+
+<body>
+
+    <p class="nome">Lucia</p>
+    <div class="div1">
+        <img class="image-1" src="./assests/lucia.png" alt="lucia">
+    </div>
+    <div class="div2">
+        <p class="p1">Selecione seu Personagem</p>
+        <h1>Não é só <br> um Jogo</h1>
+        <p class="p2">Escolha uma lenda de Serra City Ou tire uma selfie!</p>
+    </div>
+
+    <div class="menu">
+
+         <img onclick="cliquei('Lucia', './assests/lucia.png', '#ff3cac')" class="avatar" src="./assests/lucia.png" alt="Lucia">
+
+         <img onclick="cliquei('Jason', './assests/jason.png', '#00b2c9')" class="avatar" src="./assests/jason.png" alt="jason"> 
+
+         <img onclick="cliquei('CJ', './assests/cj.png', '#72d37e')" class="avatar" src="./assests/cj.png" alt="CJ">
+
+        <label class="voce"> <img class="gta" src="./assests/gta.jpeg" alt="GTA">
+            <input type="file" accept="image/*" hidden onchange= "lerFoto(this)" >
+
+        </label>
+    </div>
+</body>
+
+<script src="https://js.puter.com/v2/"></script>
+<script src="./script.js"></script>
+</html>
